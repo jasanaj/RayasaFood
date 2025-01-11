@@ -23,6 +23,7 @@ class ChooseLocationActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
         setContentView(binding.root)
         val locationList = arrayOf("Jakarta","Bandung","Jogjakarta","Surabaya")
         val adapter =  ArrayAdapter(this,android.R.layout.simple_list_item_1, locationList)
