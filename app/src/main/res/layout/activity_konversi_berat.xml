@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="KONVERSI BERAT"
+        android:textSize="24sp"
+        android:fontFamily="@font/yeon_sung"
+        android:layout_marginBottom="30dp"/>
+
+    <!-- EditText untuk input berat -->
+    <EditText
+        android:id="@+id/etInputBerat"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Masukkan Berat"
+        android:inputType="numberDecimal"
+        android:textSize="18sp" />
+
+    <!-- Spinner untuk memilih satuan input -->
+    <Spinner
+        android:id="@+id/spinnerInputSatuan"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Spinner untuk memilih satuan output -->
+    <Spinner
+        android:id="@+id/spinnerOutputSatuan"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Tombol untuk konversi -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnKonversi"
+        android:layout_width="157dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/greenbutton"
+        android:fontFamily="@font/lato_bold"
+        android:text="Konversi"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <!-- TextView untuk hasil konversi -->
+    <TextView
+        android:id="@+id/tvHasilKonversi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hasil Konversi: "
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>

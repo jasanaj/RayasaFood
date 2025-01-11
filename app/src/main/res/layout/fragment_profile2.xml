@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.ProfileFragment">
+
+    <!-- LinearLayout untuk menata tampilan secara vertikal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- TextView untuk judul Profile -->
+        <TextView
+            android:id="@+id/profileTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/yeon_sung"
+            android:gravity="center"
+            android:text="Profile"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <!-- ImageView untuk Foto Profil yang lebih besar -->
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/menu1" />
+
+        <!-- TextView untuk Nama Pengguna dengan style baru -->
+        <TextView
+            android:id="@+id/profileName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/yeon_sung"
+            android:text="Nama: John Doe"
+            android:textSize="24sp" />
+
+        <!-- TextView untuk Alamat Pengguna dengan style baru -->
+        <TextView
+            android:id="@+id/profileAddress"
+            style="@style/ProfileTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alamat: Jl. Contoh No.123, Jakarta"
+            android:textSize="18sp" />
+
+        <!-- TextView untuk Email Pengguna dengan style baru -->
+        <TextView
+            android:id="@+id/profileEmail"
+            style="@style/ProfileTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email: johndoe@example.com"
+            android:textSize="18sp" />
+
+        <!-- TextView untuk Nomor Telepon Pengguna dengan style baru -->
+        <TextView
+            android:id="@+id/profilePhone"
+            style="@style/ProfileTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:text="Nomor Telepon: +62 123 456 789"
+            android:textSize="18sp" />
+
+        <!-- TextView untuk menjelaskan fitur tambahan -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:gravity="center"
+            android:text="Akses fitur tambahan berikut untuk menghitung, mengonversi, dan lebih banyak lagi!"
+            android:textColor="#555555"
+            android:textSize="16sp" />
+
+        <!-- Tombol untuk navigasi ke Kalkulator dengan ukuran lebih kecil -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonKalkulator"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/greenbutton"
+            android:fontFamily="@font/lato_bold"
+            android:text="Kalkulator"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <!-- Tombol untuk navigasi ke Konversi Mata Uang dengan ukuran lebih kecil -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonKonversiMataUang"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/greenbutton"
+            android:fontFamily="@font/lato_bold"
+            android:text="Konversi Mata Uang"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <!-- Tombol untuk navigasi ke Konversi Suhu dengan ukuran lebih kecil -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonKonversiSuhu"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/greenbutton"
+            android:fontFamily="@font/lato_bold"
+            android:text="Konversi Suhu"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <!-- Tombol untuk navigasi ke Konversi Berat dengan ukuran lebih kecil -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonKonversiBerat"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/greenbutton"
+            android:fontFamily="@font/lato_bold"
+            android:text="Konversi Berat"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</FrameLayout>

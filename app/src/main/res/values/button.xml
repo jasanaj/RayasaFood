@@ -1,0 +1,30 @@
+<resources>
+    <style name="CustomButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:backgroundTint">#00796B</item> <!-- Warna tombol -->
+        <item name="android:padding">16dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:elevation">4dp</item> <!-- Bayangan tombol -->
+    </style>
+
+    <!-- Styling untuk teks profil -->
+    <style name="ProfileTextStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#333333</item> <!-- Warna abu-abu gelap untuk teks -->
+        <item name="android:fontFamily">@font/yeon_sung</item> <!-- Font yang lebih modern -->
+        <item name="android:lineSpacingExtra">4dp</item> <!-- Jarak antar baris -->
+    </style>
+
+    <!-- Styling untuk teks header (Nama Pengguna) -->
+    <style name="ProfileHeaderTextStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#000000</item> <!-- Warna hitam -->
+        <item name="android:fontFamily">@font/yeon_sung</item> <!-- Bold untuk nama pengguna -->
+        <item name="android:layout_marginBottom">8dp</item> <!-- Margin bawah untuk pemisah dengan elemen lain -->
+    </style>
+
+
+</resources>
