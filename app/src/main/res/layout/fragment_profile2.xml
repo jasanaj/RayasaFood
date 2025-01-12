@@ -1,136 +1,228 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.ProfileFragment">
+    android:background="@color/white">
 
-    <!-- LinearLayout untuk menata tampilan secara vertikal -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- TextView untuk judul Profile -->
-        <TextView
-            android:id="@+id/profileTitle"
-            android:layout_width="wrap_content"
+        <!-- Profile Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/yeon_sung"
+            android:orientation="vertical"
             android:gravity="center"
-            android:text="Profile"
-            android:textColor="#000000"
-            android:textSize="30sp" />
+            android:layout_marginBottom="24dp">
 
-        <!-- ImageView untuk Foto Profil yang lebih besar -->
-        <ImageView
-            android:id="@+id/profileImage"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginBottom="10dp"
-            android:src="@drawable/menu1" />
+            <!-- TextView untuk judul Profile -->
+            <TextView
+                android:id="@+id/profileTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/yeon_sung"
+                android:gravity="center"
+                android:text="Profile"
+                android:textColor="#000000"
+                android:textSize="30sp" />
 
-        <!-- TextView untuk Nama Pengguna dengan style baru -->
-        <TextView
-            android:id="@+id/profileName"
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/menu1"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="Profile Picture"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
+        <!-- Editable Fields -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/yeon_sung"
-            android:text="Nama: John Doe"
-            android:textSize="24sp" />
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
 
-        <!-- TextView untuk Alamat Pengguna dengan style baru -->
-        <TextView
-            android:id="@+id/profileAddress"
-            style="@style/ProfileTextStyle"
+            <!-- Nama -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/lato"
+                android:text="Nama"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/editProfileName"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="Masukkan nama"
+                android:text="Zon"
+                android:textSize="14sp"
+                android:padding="12dp"
+                android:background="@drawable/edittext_border" />
+
+            <!-- Email -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/lato"
+                android:text="Email"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/editProfileEmail"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="Masukkan email"
+                android:inputType="textEmailAddress"
+                android:text="zon@gmail.com"
+                android:textSize="14sp"
+                android:padding="12dp"
+                android:background="@drawable/edittext_border" />
+
+            <!-- Alamat -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/lato"
+                android:text="Alamat"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/editProfileAddress"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="Masukkan alamat"
+                android:text="Jl. Contoh No.123, Jakarta"
+                android:textSize="14sp"
+                android:padding="12dp"
+                android:background="@drawable/edittext_border"   />
+
+            <!-- Nomor Telepon -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/lato"
+                android:text="Nomor Telepon"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/editProfilePhone"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="Masukkan nomor telepon"
+                android:inputType="phone"
+                android:text="+62 123 456 789"
+                android:textSize="14sp"
+                android:padding="12dp"
+                android:background="@drawable/edittext_border" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/greenbutton"
+                android:text="Save"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginBottom="24dp"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+
+        <!-- Pembatas untuk Fitur Tambahan -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="#00BFA6" />
+
+        <!-- Additional Feature Buttons -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Alamat: Jl. Contoh No.123, Jakarta"
-            android:textSize="18sp" />
-
-        <!-- TextView untuk Email Pengguna dengan style baru -->
-        <TextView
-            android:id="@+id/profileEmail"
-            style="@style/ProfileTextStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Email: johndoe@example.com"
-            android:textSize="18sp" />
-
-        <!-- TextView untuk Nomor Telepon Pengguna dengan style baru -->
-        <TextView
-            android:id="@+id/profilePhone"
-            style="@style/ProfileTextStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="14dp"
-            android:text="Nomor Telepon: +62 123 456 789"
-            android:textSize="18sp" />
-
-        <!-- TextView untuk menjelaskan fitur tambahan -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="14dp"
+            android:orientation="vertical"
             android:gravity="center"
-            android:text="Akses fitur tambahan berikut untuk menghitung, mengonversi, dan lebih banyak lagi!"
-            android:textColor="#555555"
-            android:textSize="16sp" />
+            android:layout_marginTop="16dp">
 
-        <!-- Tombol untuk navigasi ke Kalkulator dengan ukuran lebih kecil -->
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonKalkulator"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/greenbutton"
-            android:fontFamily="@font/lato_bold"
-            android:text="Kalkulator"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="14sp" />
+            <!-- TextView untuk menandakan fitur tambahan -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/lato"
+                android:text="Fitur Tambahan"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:gravity="center" />
 
-        <!-- Tombol untuk navigasi ke Konversi Mata Uang dengan ukuran lebih kecil -->
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonKonversiMataUang"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/greenbutton"
-            android:fontFamily="@font/lato_bold"
-            android:text="Konversi Mata Uang"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="14sp" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonKalkulator"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/greenbutton"
+                android:text="Kalkulator"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:layout_gravity="center"
+                android:elevation="4dp" />
 
-        <!-- Tombol untuk navigasi ke Konversi Suhu dengan ukuran lebih kecil -->
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonKonversiSuhu"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/greenbutton"
-            android:fontFamily="@font/lato_bold"
-            android:text="Konversi Suhu"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="14sp" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonKonversiMataUang"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/greenbutton"
+                android:text="Konversi Mata Uang"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:layout_gravity="center"
+                android:elevation="4dp" />
 
-        <!-- Tombol untuk navigasi ke Konversi Berat dengan ukuran lebih kecil -->
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonKonversiBerat"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/greenbutton"
-            android:fontFamily="@font/lato_bold"
-            android:text="Konversi Berat"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="14sp" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonKonversiSuhu"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/greenbutton"
+                android:text="Konversi Suhu"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:layout_gravity="center"
+                android:elevation="4dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonKonversiBerat"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:background="@drawable/greenbutton"
+                android:text="Konversi Berat"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:layout_gravity="center"
+                android:elevation="4dp" />
+        </LinearLayout>
     </LinearLayout>
-
-</FrameLayout>
+</ScrollView>
