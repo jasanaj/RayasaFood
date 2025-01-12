@@ -1,60 +1,70 @@
 package com.example.rayasafood.Fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ListView
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import com.example.rayasafood.Contact
+import com.example.rayasafood.ContactAdapter
+import com.example.rayasafood.DatabaseHelper
 import com.example.rayasafood.R
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [HistoryFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HistoryFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var dbHelper: DatabaseHelper
+    private lateinit var contactAdapter: ContactAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_history2, container, false)
+        val rootView = inflater.inflate(R.layout.fragment_history2, container, false)
+
+        // Initialize database helper
+        dbHelper = DatabaseHelper(requireContext())
+
+        // Get references to UI elements
+        val nameInput = rootView.findViewById<EditText>(R.id.nameInput)
+        val phoneInput = rootView.findViewById<EditText>(R.id.phoneInput)
+        val addButton = rootView.findViewById<Button>(R.id.addButton)
+        val contactList = rootView.findViewById<ListView>(R.id.contactList)
+
+        // Set up adapter for ListView
+        contactAdapter = ContactAdapter(requireContext(), mutableListOf())
+        contactList.adapter = contactAdapter
+
+        // Load contacts
+        loadContacts()
+
+        // Handle add button click
+        addButton.setOnClickListener {
+            val name = nameInput.text.toString().trim()
+            val phone = phoneInput.text.toString().trim()
+
+            if (name.isNotEmpty() && phone.isNotEmpty()) {
+                val result = dbHelper.addContact(name, phone)
+                if (result != -1L) {
+                    Toast.makeText(requireContext(), "Contact Added", Toast.LENGTH_SHORT).show()
+                    nameInput.text.clear()
+                    phoneInput.text.clear()
+                    loadContacts()
+                }
+            } else {
+                Toast.makeText(requireContext(), "Fill all fields", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        return rootView
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HistoryFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HistoryFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun loadContacts() {
+        val contacts = dbHelper.getAllContacts()
+        contactAdapter.updateContacts(contacts)
     }
 }
